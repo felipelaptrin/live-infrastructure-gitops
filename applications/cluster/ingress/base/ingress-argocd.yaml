@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/tags: Environment=ENVIRONMENT
+    alb.ingress.kubernetes.io/group.name: GROUP-ingress
+    alb.ingress.kubernetes.io/group.order: ORDER-NUMBER
+spec:
+  ingressClassName: alb
+  rules:
+    - host: ARGOCD-ENVIRONMENT.felipetrindade.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443

@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+bases:
+  - ../base
+
+patches:
+  - path: ingress-argocd.yaml
+    target:
+      kind: Ingress
+      name: argocd-ingress
+
+resources:
+  - ingress-dev.yaml
