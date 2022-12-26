@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/felipelaptrin/live-infrastructure-gitops.git
     targetRevision: HEAD
-    path: applications/apps/argocd-apps/website.yaml
+    path: applications/apps/argocd-apps
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
