@@ -6,8 +6,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/felipelaptrin/live-infrastructure-gitops.git
-    targetRevision: HEAD
+    repoURL: https://charts.fairwinds.com/stable
+    targetRevision: 5.7.0
     path: applications/apps/polaris/dev
     chart: polaris
     helm:

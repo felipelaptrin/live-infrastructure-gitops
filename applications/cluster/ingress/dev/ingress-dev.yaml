@@ -24,3 +24,17 @@ spec:
                 name: website
                 port:
                   number: 80
+    - host: polaris-dev.felipetrindade.com
+      http:
+        paths:
+          - path: /
+            pathType: Exact
+            backend:
+              service:
+                name: polaris-dashboard
+                port:
+                  number: 80
+  tls:
+  - hosts:
+    - argocd-dev.felipetrindade.com
+    - polaris-dev.felipetrindade.com
