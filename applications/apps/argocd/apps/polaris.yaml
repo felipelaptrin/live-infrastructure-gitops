@@ -9,7 +9,7 @@ spec:
     repoURL: https://github.com/felipelaptrin/live-infrastructure-gitops.git
     targetRevision: HEAD
     path: applications/apps/polaris/dev
-    chart: fairwinds-stable
+    chart: polaris
     helm:
       valueFiles:
       - values.yaml
