@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: polaris
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/felipelaptrin/live-infrastructure-gitops.git
+    targetRevision: HEAD
+    path: applications/apps/polaris/dev
+    chart: fairwinds-stable
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
